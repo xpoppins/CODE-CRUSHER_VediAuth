@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAST-OTP | Anurūpye Protocol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="grid-overlay"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo-glitch" data-text="FAST-OTP">FAST-OTP</div>
+            <div class="subtitle">Anurūpye Śūnyamanyat Protocol v2.0</div>
+        </header>
+        
+        <div class="otp-container">
+            <div class="otp-display" id="otpText">000000</div>
+            <div class="scan-line"></div>
+        </div>
+        
+        <button id="genBtn">Generate Secure Token</button>
+
+        <div class="security-panel">
+            <div class="status-row">
+                <span class="status-dot"></span>
+                <span class="status-label">ENCRYPTION: </span>
+                <span class="status-value" id="modeStatus">Vedic Proportionality</span>
+            </div>
+            <p id="logicStatus">System ready. Awaiting trigger...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

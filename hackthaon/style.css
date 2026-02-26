@@ -1,0 +1,150 @@
+:root {
+    --neon-blue: #00f2ff;
+    --neon-purple: #bc13fe;
+    --bg-dark: #08080c;
+    --glass: rgba(0, 242, 255, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Futuristic Grid Background */
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: linear-gradient(var(--glass) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--glass) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(1000px) rotateX(60deg) translateY(-100px);
+    z-index: -1;
+    animation: gridMove 15s linear infinite;
+}
+
+@keyframes gridMove {
+    from { transform: perspective(1000px) rotateX(60deg) translateY(0); }
+    to { transform: perspective(1000px) rotateX(60deg) translateY(50px); }
+}
+
+.container {
+    background: rgba(10, 10, 15, 0.95);
+    padding: 3rem;
+    border-radius: 5px;
+    border-left: 4px solid var(--neon-blue);
+    border-right: 1px solid var(--neon-purple);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 450px;
+    position: relative;
+}
+
+/* Glitch Effect for Title */
+.logo-glitch {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: var(--neon-blue);
+    text-shadow: 2px 2px var(--neon-purple);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 0.65rem;
+    color: #555;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.otp-container {
+    position: relative;
+    background: #000;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #222;
+}
+
+.otp-display {
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 12px;
+    color: var(--neon-purple);
+    text-shadow: 0 0 15px var(--neon-purple);
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+    opacity: 0.5;
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+button {
+    width: 100%;
+    background: transparent;
+    color: var(--neon-blue);
+    border: 1px solid var(--neon-blue);
+    padding: 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.security-panel {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    text-align: left;
+    color: #666;
+    background: rgba(255,255,255,0.02);
+    padding: 15px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.status-value { color: #aaa; }
