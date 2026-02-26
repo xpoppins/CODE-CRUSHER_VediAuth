@@ -1,0 +1,5 @@
+{
+  "name": "VediAuth",
+  "description": "Stateless OTP Authentication using Vedic Mathematics",
+  "requestFramePermissions": []
+}
